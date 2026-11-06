@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="text-scale" content="scale" />
+		<link href="../../_app/immutable/entry/start.IQ3_7JUY.js" rel="modulepreload">
+		<link href="../../_app/immutable/entry/payload.DSmR2FwN.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/DclECHGd.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/B1r1QuWP.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/CEhEv8CO.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/Dq0He8JO.js" rel="modulepreload">
+		<link href="../../_app/immutable/entry/app.B3plrQCB.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/0.CqIYcPpV.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/DVyEBs-7.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/Ckk4V6ec.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/2.DT_HtWQo.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/6.BlN3BVgU.js" rel="modulepreload">
+		<!--12qhfyh--><link rel="icon" href="/favicon.svg"/> <meta name="description" content="Start read-only. Download a binary, embed it next to a *sql.DB, or pull the Docker image."/> <meta property="og:title" content="DBAdminer"/> <meta property="og:description" content="Start read-only. Download a binary, embed it next to a *sql.DB, or pull the Docker image."/> <meta property="og:image" content="https://dbadminer.github.io/screenshot.png"/> <meta property="og:url" content="https://dbadminer.github.io"/> <meta name="twitter:card" content="summary_large_image"/><!----><!--1q9ccmj--><!----><title>Configuration · DBAdminer</title>
+		<link href="../../_app/immutable/assets/0.fzq8kKC5.css" rel="stylesheet">
+		<link href="../../_app/immutable/assets/2.KZYM3XbC.css" rel="stylesheet">
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents"><!--[--><!--[--><!--[0--><!--[--><div class="shell svelte-12qhfyh"><header class="site-header svelte-a8kxe2"><a class="brand svelte-a8kxe2" href="/"><img src="/logo.svg" alt="" width="36" height="36" class="svelte-a8kxe2"/> <span>DBAdminer</span></a> <nav aria-label="Primary" class="svelte-a8kxe2"><!--[--><!--[-1--><a href="/docs/" aria-current="page" class="svelte-a8kxe2">Docs</a><!--]--><!--[-1--><a href="/docs/install/" class="svelte-a8kxe2">Install</a><!--]--><!--[-1--><a href="/#writing" class="svelte-a8kxe2">Writing</a><!--]--><!--[0--><a href="https://github.com/dbadminer/dbadminer" rel="noopener noreferrer" target="_blank" class="svelte-a8kxe2">GitHub</a><!--]--><!--]--></nav></header><!----> <main class="svelte-12qhfyh"><!--[--><!--[0--><!--[--><div class="docs svelte-1bpnej"><aside class="sidebar svelte-py31u9"><p class="label svelte-py31u9">Documentation</p> <nav aria-label="Docs" class="svelte-py31u9"><!--[--><a href="/docs/" class="svelte-py31u9">Quick start</a><a href="/docs/install/" class="svelte-py31u9">Install</a><a href="/docs/library/" class="svelte-py31u9">Library</a><a href="/docs/cli/" class="svelte-py31u9">CLI</a><a href="/docs/docker/" class="svelte-py31u9">Docker</a><a href="/docs/configuration/" aria-current="page" class="svelte-py31u9">Configuration</a><a href="/docs/security/" class="svelte-py31u9">Security</a><a href="/docs/http-api/" class="svelte-py31u9">HTTP API</a><a href="/docs/dialects/" class="svelte-py31u9">Dialects</a><!--]--></nav></aside><!----> <article class="prose prose-neutral max-w-none prose-headings:tracking-tight prose-a:text-teal-700 prose-code:before:content-none prose-code:after:content-none svelte-1bpnej"><!--[--><!--[-1--><!--[--><h1>Configuration</h1> <h2>Access mode</h2> <p>Read-only mode allows one <code>SELECT</code>, <code>WITH</code>, <code>EXPLAIN</code>, <code>VALUES</code>, <code>TABLE</code>, or <code>SHOW</code>. Write statements are rejected before
+	they reach the database. PostgreSQL, MySQL, and MariaDB also run those statements in a read-only
+	transaction. SQLite opens with <code>mode=ro</code>.</p> <p>Full access runs one statement with the database user's privileges, including DML and DDL.</p> <pre><code>dbadminer --access=full
+dbadminer --readonly=false
+DBADMINER_ACCESS=full</code></pre> <p><code>--access</code> takes <code>readonly</code> or <code>full</code>. Set only one of <code>--access</code> and <code>--readonly</code>. Write UIs stay hidden in read-only mode and their
+	APIs return 403.</p> <h2>Library and CLI flags</h2> <p>Flags accepted by <code>Flags</code> and <code>Run</code>: <code>--addr</code>, <code>--access</code>, <code>--readonly</code>, <code>--user</code>, <code>--password</code>, <code>--max-rows</code>, <code>--query-timeout</code>, <code>--max-body</code>, <code>--max-response</code>.</p> <p><code>cmd/dbadminer</code> also accepts <code>--dsn</code>, <code>--db-host</code>, <code>--db-port</code>, <code>--db-user</code>, <code>--db-password</code>, <code>--db-name</code>, and <code>--schema</code>. <code>DBADMINER_DATABASES</code> names more than
+	one database; each name prefixes those variables.</p> <p><code>--user</code> and <code>--password</code> are basic auth for the page. They are never taken
+	from the database password. <code>Config.Schema</code> hides every other schema for a pool you
+	already opened.</p> <h2>Limits</h2> <p>Row page size is capped by <code>MaxRows</code>. Request bodies, query time, and encoded response
+	size are also capped. Prefer tighter limits when the explorer is shared across a team VPN.</p><!--]--><!--]--><!--]--><!----></article></div><!--]--><!--]--><!--]--><!----></main> <footer class="site-footer svelte-4jwo3w"><p class="svelte-4jwo3w"><a href="/" class="svelte-4jwo3w">DBAdminer</a> · <a href="https://github.com/dbadminer/dbadminer" rel="noopener noreferrer" target="_blank" class="svelte-4jwo3w">GitHub</a> · <a href="https://hub.docker.com/r/dbadminer/dbadminer" rel="noopener noreferrer" target="_blank" class="svelte-4jwo3w">Docker Hub</a> · <a href="https://dev.to/rp01/i-built-a-database-explorer-that-cant-ruin-your-friday-hnh" rel="noopener noreferrer" target="_blank" class="svelte-4jwo3w">Blog</a></p> <p class="muted svelte-4jwo3w">MIT or Apache-2.0 · Built for local databases, not public networks.</p></footer><!----></div><!--]--><!--]--><!--]--><!----> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_1w8ocpe = {
+						base: new URL("../..", location).pathname.slice(0, -1),
+						version: "1793947342895"
+					};
+
+					const element = document.currentScript.parentElement;
+
+					import("../../_app/immutable/entry/start.IQ3_7JUY.js").then(async (kit) => {
+						kit.init(__sveltekit_1w8ocpe);
+						const app = await import("../../_app/immutable/entry/app.B3plrQCB.js");
+						kit.start(app, element, {
+							node_ids: [0, 2, 6],
+							data: [null,null,null],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>

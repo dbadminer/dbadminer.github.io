@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="text-scale" content="scale" />
+		<link href="./_app/immutable/entry/start.IQ3_7JUY.js" rel="modulepreload">
+		<link href="./_app/immutable/entry/payload.DSmR2FwN.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/DclECHGd.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/B1r1QuWP.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/CEhEv8CO.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/Dq0He8JO.js" rel="modulepreload">
+		<link href="./_app/immutable/entry/app.B3plrQCB.js" rel="modulepreload">
+		<link href="./_app/immutable/nodes/0.CqIYcPpV.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/DVyEBs-7.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/Ckk4V6ec.js" rel="modulepreload">
+		<link href="./_app/immutable/nodes/3.B71UlXe6.js" rel="modulepreload">
+		<!--12qhfyh--><link rel="icon" href="/favicon.svg"/> <meta name="description" content="Start read-only. Download a binary, embed it next to a *sql.DB, or pull the Docker image."/> <meta property="og:title" content="DBAdminer"/> <meta property="og:description" content="Start read-only. Download a binary, embed it next to a *sql.DB, or pull the Docker image."/> <meta property="og:image" content="https://dbadminer.github.io/screenshot.png"/> <meta property="og:url" content="https://dbadminer.github.io"/> <meta name="twitter:card" content="summary_large_image"/><!----><!--1uha8ag--><!----><title>DBAdminer — database explorer for Go</title>
+		<link href="./_app/immutable/assets/0.fzq8kKC5.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/3.CCXo0Krb.css" rel="stylesheet">
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents"><!--[--><!--[--><!--[0--><!--[--><div class="shell svelte-12qhfyh"><header class="site-header svelte-a8kxe2"><a class="brand svelte-a8kxe2" href="/"><img src="/logo.svg" alt="" width="36" height="36" class="svelte-a8kxe2"/> <span>DBAdminer</span></a> <nav aria-label="Primary" class="svelte-a8kxe2"><!--[--><!--[-1--><a href="/docs/" class="svelte-a8kxe2">Docs</a><!--]--><!--[-1--><a href="/docs/install/" class="svelte-a8kxe2">Install</a><!--]--><!--[-1--><a href="/#writing" class="svelte-a8kxe2">Writing</a><!--]--><!--[0--><a href="https://github.com/dbadminer/dbadminer" rel="noopener noreferrer" target="_blank" class="svelte-a8kxe2">GitHub</a><!--]--><!--]--></nav></header><!----> <main class="svelte-12qhfyh"><!--[--><!--[-1--><!--[--><section class="hero svelte-1uha8ag"><div class="copy svelte-1uha8ag"><p class="brand svelte-1uha8ag">DBAdminer</p> <h1 class="svelte-1uha8ag">Browse PostgreSQL, MySQL, and SQLite without leaving your stack.</h1> <p class="lede svelte-1uha8ag">Starts read-only. Ship a binary, embed next to a <code class="svelte-1uha8ag">*sql.DB</code>, or pull the Docker
+			image. The library imports only the Go standard library.</p> <div class="ctas svelte-1uha8ag"><a class="primary svelte-1uha8ag" href="/docs/install/">Install</a> <a class="secondary svelte-1uha8ag" href="/docs/">Docs</a> <a class="ghost svelte-1uha8ag" href="https://github.com/dbadminer/dbadminer" rel="noopener noreferrer" target="_blank">GitHub</a></div></div></section> <section class="visual svelte-1uha8ag" aria-label="Product screenshot"><div class="frame svelte-1uha8ag"><img src="/screenshot.png" alt="DBAdminer browsing MySQL shop.customers with tables and routines in the explorer" width="1600" height="1000" class="svelte-1uha8ag"/></div></section> <section class="compose svelte-1uha8ag"><div class="compose-copy svelte-1uha8ag"><h2 class="svelte-1uha8ag">Drop it into Compose</h2> <p class="svelte-1uha8ag">Publish only on loopback, point env vars at your services, and open <code class="svelte-1uha8ag">http://127.0.0.1:8080</code>. Multi-database names become a switcher in the UI.</p> <p class="more svelte-1uha8ag"><a href="/docs/docker/" class="svelte-1uha8ag">Full Docker guide</a> · <a href="https://github.com/dbadminer/dbadminer/tree/main/examples/demo" rel="noopener noreferrer" target="_blank" class="svelte-1uha8ag">Demo stack</a></p></div> <pre class="svelte-1uha8ag"><code class="svelte-1uha8ag">services:
+  dbadminer:
+    image: dbadminer/dbadminer:latest
+    ports:
+      - "127.0.0.1:8080:8080"
+    environment:
+      DBADMINER_DATABASES: shop,app
+      SHOP_DATABASE_URL: mysql://mysql:3306/shop
+      SHOP_DB_USER: ada
+      SHOP_DB_PASSWORD: secret
+      APP_DATABASE_URL: postgres://postgres:5432/app?sslmode=disable
+      APP_DB_USER: ada
+      APP_DB_PASSWORD: secret
+      APP_DB_SCHEMA: public</code></pre></section> <section id="writing" class="writing svelte-1uha8ag"><h2 class="svelte-1uha8ag">Writing</h2> <ul class="svelte-1uha8ag"><!--[--><li class="svelte-1uha8ag"><a href="https://dev.to/rp01/i-built-a-database-explorer-that-cant-ruin-your-friday-hnh" rel="noopener noreferrer" target="_blank" class="svelte-1uha8ag">I built a database explorer that can't ruin your Friday</a> <span class="svelte-1uha8ag">2026</span></li><!--]--></ul> <p class="more svelte-1uha8ag">More on <a href="https://dev.to/rp01" rel="noopener noreferrer" target="_blank" class="svelte-1uha8ag">dev.to/rp01</a>.</p></section><!--]--><!--]--><!--]--><!----></main> <footer class="site-footer svelte-4jwo3w"><p class="svelte-4jwo3w"><a href="/" class="svelte-4jwo3w">DBAdminer</a> · <a href="https://github.com/dbadminer/dbadminer" rel="noopener noreferrer" target="_blank" class="svelte-4jwo3w">GitHub</a> · <a href="https://hub.docker.com/r/dbadminer/dbadminer" rel="noopener noreferrer" target="_blank" class="svelte-4jwo3w">Docker Hub</a> · <a href="https://dev.to/rp01/i-built-a-database-explorer-that-cant-ruin-your-friday-hnh" rel="noopener noreferrer" target="_blank" class="svelte-4jwo3w">Blog</a></p> <p class="muted svelte-4jwo3w">MIT or Apache-2.0 · Built for local databases, not public networks.</p></footer><!----></div><!--]--><!--]--><!--]--><!----> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_1w8ocpe = {
+						base: new URL(".", location).pathname.slice(0, -1),
+						version: "1793947342895"
+					};
+
+					const element = document.currentScript.parentElement;
+
+					import("./_app/immutable/entry/start.IQ3_7JUY.js").then(async (kit) => {
+						kit.init(__sveltekit_1w8ocpe);
+						const app = await import("./_app/immutable/entry/app.B3plrQCB.js");
+						kit.start(app, element, {
+							node_ids: [0, 3],
+							data: [null,null],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>

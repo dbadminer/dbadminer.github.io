@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="text-scale" content="scale" />
+		<link href="../_app/immutable/entry/start.IQ3_7JUY.js" rel="modulepreload">
+		<link href="../_app/immutable/entry/payload.DSmR2FwN.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/DclECHGd.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/B1r1QuWP.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/CEhEv8CO.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/Dq0He8JO.js" rel="modulepreload">
+		<link href="../_app/immutable/entry/app.B3plrQCB.js" rel="modulepreload">
+		<link href="../_app/immutable/nodes/0.CqIYcPpV.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/DVyEBs-7.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/Ckk4V6ec.js" rel="modulepreload">
+		<link href="../_app/immutable/nodes/2.DT_HtWQo.js" rel="modulepreload">
+		<link href="../_app/immutable/nodes/4.BFPoXvml.js" rel="modulepreload">
+		<!--12qhfyh--><link rel="icon" href="/favicon.svg"/> <meta name="description" content="Start read-only. Download a binary, embed it next to a *sql.DB, or pull the Docker image."/> <meta property="og:title" content="DBAdminer"/> <meta property="og:description" content="Start read-only. Download a binary, embed it next to a *sql.DB, or pull the Docker image."/> <meta property="og:image" content="https://dbadminer.github.io/screenshot.png"/> <meta property="og:url" content="https://dbadminer.github.io"/> <meta name="twitter:card" content="summary_large_image"/><!----><!--1xmjmrw--><!----><title>Quick start · DBAdminer</title>
+		<link href="../_app/immutable/assets/0.fzq8kKC5.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/2.KZYM3XbC.css" rel="stylesheet">
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents"><!--[--><!--[--><!--[0--><!--[--><div class="shell svelte-12qhfyh"><header class="site-header svelte-a8kxe2"><a class="brand svelte-a8kxe2" href="/"><img src="/logo.svg" alt="" width="36" height="36" class="svelte-a8kxe2"/> <span>DBAdminer</span></a> <nav aria-label="Primary" class="svelte-a8kxe2"><!--[--><!--[-1--><a href="/docs/" aria-current="page" class="svelte-a8kxe2">Docs</a><!--]--><!--[-1--><a href="/docs/install/" class="svelte-a8kxe2">Install</a><!--]--><!--[-1--><a href="/#writing" class="svelte-a8kxe2">Writing</a><!--]--><!--[0--><a href="https://github.com/dbadminer/dbadminer" rel="noopener noreferrer" target="_blank" class="svelte-a8kxe2">GitHub</a><!--]--><!--]--></nav></header><!----> <main class="svelte-12qhfyh"><!--[--><!--[0--><!--[--><div class="docs svelte-1bpnej"><aside class="sidebar svelte-py31u9"><p class="label svelte-py31u9">Documentation</p> <nav aria-label="Docs" class="svelte-py31u9"><!--[--><a href="/docs/" aria-current="page" class="svelte-py31u9">Quick start</a><a href="/docs/install/" class="svelte-py31u9">Install</a><a href="/docs/library/" class="svelte-py31u9">Library</a><a href="/docs/cli/" class="svelte-py31u9">CLI</a><a href="/docs/docker/" class="svelte-py31u9">Docker</a><a href="/docs/configuration/" class="svelte-py31u9">Configuration</a><a href="/docs/security/" class="svelte-py31u9">Security</a><a href="/docs/http-api/" class="svelte-py31u9">HTTP API</a><a href="/docs/dialects/" class="svelte-py31u9">Dialects</a><!--]--></nav></aside><!----> <article class="prose prose-neutral max-w-none prose-headings:tracking-tight prose-a:text-teal-700 prose-code:before:content-none prose-code:after:content-none svelte-1bpnej"><!--[--><!--[-1--><!--[--><h1>Quick start</h1> <p>DBAdminer is a database explorer for Go. It starts read-only. Use a binary, embed the library next
+	to a <code>*sql.DB</code> you already have, or run the Docker image.</p> <h2>Pick a path</h2> <ul><li><a href="/docs/install/">Install a release binary</a> and open <code>http://127.0.0.1:8080</code></li> <li><a href="/docs/library/">Embed the library</a> in an existing Go app</li> <li><a href="/docs/docker/">Run the Docker image</a> on loopback</li> <li><a href="/docs/cli/">Wire DSN and environment variables</a> for the CLI</li></ul> <h2>Five-minute library embed</h2> <pre><code>cfg := dbadminer.DefaultConfig()
+ex, err := dbadminer.New(db, cfg)
+if err != nil {
+	log.Fatal(err)
+}
+if err := ex.ListenAndServe(ctx); err != nil {
+	log.Fatal(err)
+}</code></pre> <p>Import <code>github.com/dbadminer/dbadminer</code>. That import does not add database drivers to your
+	module. <code>DefaultConfig</code> is read-only and listens on <code>127.0.0.1:8080</code>.</p> <h2>Safety first</h2> <p>Read-only mode is best effort. Prefer a database user that only has <code>SELECT</code>, and open
+	SQLite with <code>mode=ro</code>. See <a href="/docs/security/">Security</a> before exposing the UI
+	beyond your machine.</p><!--]--><!--]--><!--]--><!----></article></div><!--]--><!--]--><!--]--><!----></main> <footer class="site-footer svelte-4jwo3w"><p class="svelte-4jwo3w"><a href="/" class="svelte-4jwo3w">DBAdminer</a> · <a href="https://github.com/dbadminer/dbadminer" rel="noopener noreferrer" target="_blank" class="svelte-4jwo3w">GitHub</a> · <a href="https://hub.docker.com/r/dbadminer/dbadminer" rel="noopener noreferrer" target="_blank" class="svelte-4jwo3w">Docker Hub</a> · <a href="https://dev.to/rp01/i-built-a-database-explorer-that-cant-ruin-your-friday-hnh" rel="noopener noreferrer" target="_blank" class="svelte-4jwo3w">Blog</a></p> <p class="muted svelte-4jwo3w">MIT or Apache-2.0 · Built for local databases, not public networks.</p></footer><!----></div><!--]--><!--]--><!--]--><!----> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_1w8ocpe = {
+						base: new URL("..", location).pathname.slice(0, -1),
+						version: "1793947342895"
+					};
+
+					const element = document.currentScript.parentElement;
+
+					import("../_app/immutable/entry/start.IQ3_7JUY.js").then(async (kit) => {
+						kit.init(__sveltekit_1w8ocpe);
+						const app = await import("../_app/immutable/entry/app.B3plrQCB.js");
+						kit.start(app, element, {
+							node_ids: [0, 2, 4],
+							data: [null,null,null],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
