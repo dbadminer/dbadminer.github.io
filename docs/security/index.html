@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="text-scale" content="scale" />
+		<link href="../../_app/immutable/entry/start.IQ3_7JUY.js" rel="modulepreload">
+		<link href="../../_app/immutable/entry/payload.DSmR2FwN.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/DclECHGd.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/B1r1QuWP.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/CEhEv8CO.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/Dq0He8JO.js" rel="modulepreload">
+		<link href="../../_app/immutable/entry/app.sFPcXhBi.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/0.CXHmW_wT.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/BqRiXfu2.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/Ckk4V6ec.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/2.BVaAukDi.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/12.Op72_aOT.js" rel="modulepreload">
+		<!--12qhfyh--><link rel="icon" href="/favicon.svg"/> <meta name="description" content="Start read-only. Download a binary, embed it next to a *sql.DB, or pull the Docker image."/> <meta property="og:title" content="DBAdminer"/> <meta property="og:description" content="Start read-only. Download a binary, embed it next to a *sql.DB, or pull the Docker image."/> <meta property="og:image" content="https://dbadminer.github.io/screenshot.png"/> <meta property="og:url" content="https://dbadminer.github.io"/> <meta name="twitter:card" content="summary_large_image"/><!----><!--1qwo2vp--><!----><title>Security · DBAdminer</title>
+		<link href="../../_app/immutable/assets/0.fzq8kKC5.css" rel="stylesheet">
+		<link href="../../_app/immutable/assets/2.KZYM3XbC.css" rel="stylesheet">
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents"><!--[--><!--[--><!--[0--><!--[--><div class="shell svelte-12qhfyh"><header class="site-header svelte-a8kxe2"><a class="brand svelte-a8kxe2" href="/"><img src="/logo.svg" alt="" width="36" height="36" class="svelte-a8kxe2"/> <span>DBAdminer</span></a> <nav aria-label="Primary" class="svelte-a8kxe2"><!--[--><!--[-1--><a href="/docs/" aria-current="page" class="svelte-a8kxe2">Docs</a><!--]--><!--[-1--><a href="/docs/install/" class="svelte-a8kxe2">Install</a><!--]--><!--[-1--><a href="/#writing" class="svelte-a8kxe2">Writing</a><!--]--><!--[0--><a href="https://github.com/dbadminer/dbadminer" rel="noopener noreferrer" target="_blank" class="svelte-a8kxe2">GitHub</a><!--]--><!--]--></nav></header><!----> <main class="svelte-12qhfyh"><!--[--><!--[0--><!--[--><div class="docs svelte-1bpnej"><aside class="sidebar svelte-py31u9"><p class="label svelte-py31u9">Documentation</p> <nav aria-label="Docs" class="svelte-py31u9"><!--[--><a href="/docs/" class="svelte-py31u9">Quick start</a><a href="/docs/install/" class="svelte-py31u9">Install</a><a href="/docs/library/" class="svelte-py31u9">Library</a><a href="/docs/cli/" class="svelte-py31u9">CLI</a><a href="/docs/docker/" class="svelte-py31u9">Docker</a><a href="/docs/configuration/" class="svelte-py31u9">Configuration</a><a href="/docs/security/" aria-current="page" class="svelte-py31u9">Security</a><a href="/docs/http-api/" class="svelte-py31u9">HTTP API</a><a href="/docs/dialects/" class="svelte-py31u9">Dialects</a><!--]--></nav></aside><!----> <article class="prose prose-neutral max-w-none prose-headings:tracking-tight prose-a:text-teal-700 prose-code:before:content-none prose-code:after:content-none svelte-1bpnej"><!--[--><!--[-1--><!--[--><h1>Security</h1> <p>DBAdminer is a local window onto a database you already have. It is not a sandbox and it is not safe
+	to expose on a public network.</p> <h2>What the library does</h2> <ul><li>Listens on a loopback address by default. <code>0.0.0.0</code> and <code>::</code> are accepted so
+		a container can receive connections that Docker forwards. A specific public address is refused.</li> <li>Rejects requests whose <code>Host</code> is not loopback. A request <code>Origin</code>, when
+		present, must match that host.</li> <li>Defaults to read-only access; write statements are rejected before they reach the driver.</li> <li>Accepts schema, table, and order names only when they match a live catalog entry, then quotes
+		them. Query values are bound parameters.</li> <li>Compares basic-auth credentials in constant time and slows repeated failures.</li> <li>Sets <code>Content-Security-Policy</code>, <code>X-Content-Type-Options</code>, and <code>Referrer-Policy</code>.</li> <li>Caps request bodies, row counts, query time, and encoded response size.</li> <li>Renders values in the UI with <code>textContent</code>.</li></ul> <h2>What you should do</h2> <ul><li>Create a database user with <code>SELECT</code> only when you want read-only browsing.</li> <li>Open SQLite with <code>mode=ro</code> (the CLI does this in read-only mode).</li> <li>Publish the Docker port on host loopback only: <code>-p 127.0.0.1:8080:8080</code>.</li> <li>Set <code>--user</code> and <code>--password</code> if the page itself should require a login.
+		Database passwords are never used as page credentials.</li></ul> <p>Report vulnerabilities privately to the repository maintainers. Full notes live in <a href="https://github.com/dbadminer/dbadminer/blob/main/SECURITY.md" rel="noopener noreferrer" target="_blank">SECURITY.md</a>.</p><!--]--><!--]--><!--]--><!----></article></div><!--]--><!--]--><!--]--><!----></main> <footer class="site-footer svelte-4jwo3w"><p class="svelte-4jwo3w"><a href="/" class="svelte-4jwo3w">DBAdminer</a> · <a href="https://github.com/dbadminer/dbadminer" rel="noopener noreferrer" target="_blank" class="svelte-4jwo3w">GitHub</a> · <a href="https://hub.docker.com/r/dbadminer/dbadminer" rel="noopener noreferrer" target="_blank" class="svelte-4jwo3w">Docker Hub</a> · <a href="https://ecohub.mariadb.org/database-management/dbadminer" rel="noopener noreferrer" target="_blank" class="svelte-4jwo3w">MariaDB Ecohub</a> · <a href="https://dev.to/rp01/i-built-a-database-explorer-that-cant-ruin-your-friday-hnh" rel="noopener noreferrer" target="_blank" class="svelte-4jwo3w">Blog</a></p> <p class="muted svelte-4jwo3w">MIT · Built for local databases, not public networks.</p></footer><!----></div><!--]--><!--]--><!--]--><!----> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_1ras2u5 = {
+						base: new URL("../..", location).pathname.slice(0, -1),
+						version: "1794320007500"
+					};
+
+					const element = document.currentScript.parentElement;
+
+					import("../../_app/immutable/entry/start.IQ3_7JUY.js").then(async (kit) => {
+						kit.init(__sveltekit_1ras2u5);
+						const app = await import("../../_app/immutable/entry/app.sFPcXhBi.js");
+						kit.start(app, element, {
+							node_ids: [0, 2, 12],
+							data: [null,null,null],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
